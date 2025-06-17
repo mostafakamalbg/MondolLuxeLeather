@@ -1,0 +1,67 @@
+/* style.css */
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+/* Custom scrollbar for horizontal sections */
+.no-scrollbar::-webkit-scrollbar {
+    display: none;
+}
+.no-scrollbar {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+}
+
+/* Sidebar styles */
+.sidebar {
+    transform: translateX(-100%);
+    transition: transform 0.3s ease-in-out;
+}
+.sidebar.open {
+    transform: translateX(0);
+}
+
+/* Product card visibility for search */
+.product-card {
+    display: block; /* Always visible for horizontal scroll, search will hide/show */
+}
+.product-card.hidden-by-search {
+    display: none; /* Class used by JS to hide when not matching search */
+}
+
+/* Accordion styles */
+.accordion-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out;
+}
+.accordion-content.open {
+    max-height: 1000px; /* Increased max-height to ensure all content is visible */
+}
+
+/* Carousel/Slider styles */
+.carousel-container {
+    overflow: hidden;
+    position: relative;
+}
+.carousel-inner {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+.carousel-item {
+    flex: 0 0 100%;
+}
+.dot {
+    width: 10px;
+    height: 10px;
+    background-color: #ccc;
+    border-radius: 50%;
+    cursor: pointer;
+}
+.dot.active {
+    background-color: #333;
+}
+
